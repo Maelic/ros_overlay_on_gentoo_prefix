@@ -247,17 +247,15 @@ RUN mkdir -p ~/ros2_humble/src &&\
     colcon build --symlink-install
 
 #Download naoqi_driver
-RUN mkdir -p ~/catkin_ros2/src &&\
-    cd ~/catkin_ros2/src/ &&\
-    git clone https://github.com/RoboBreizh-RoboCup-Home/naoqi_driver2.git  &&\
-    git clone --branch humble https://github.com/ros-perception/vision_opencv &&\  
-    #git clone --branch debian/galactic/naoqi_libqi https://github.com/ros-naoqi/libqi-release &&\
-    git clone --branch ros2 https://github.com/ros-naoqi/libqi &&\
-    #git clone https://github.com/Maelic/libqi &&\
-    #git clone --branch debian/galactic/naoqi_libqicore https://github.com/ros-naoqi/libqicore-release &&\
-    git clone --branch master https://github.com/aldebaran/libqicore &&\
-    git clone https://github.com/ros-naoqi/naoqi_bridge_msgs2 &&\
-    git clone https://github.com/ros/diagnostics
+# RUN mkdir -p ~/catkin_ros2/src &&\
+#     cd ~/catkin_ros2/src/ &&\
+#     git clone https://github.com/RoboBreizh-RoboCup-Home/naoqi_driver2.git  &&\
+#     git clone --branch humble https://github.com/ros-perception/vision_opencv &&\  
+#     git clone --branch debian/galactic/naoqi_libqi https://github.com/ros-naoqi/libqi-release &&\
+#     git clone --branch debian/galactic/naoqi_libqicore https://github.com/ros-naoqi/libqicore-release &&\
+#     git clone --branch master https://github.com/aldebaran/libqicore &&\
+#     git clone https://github.com/ros-naoqi/naoqi_bridge_msgs2 &&\
+#     git clone https://github.com/ros/diagnostics
 
 #Doesn't work
 #RUN emerge dev-libs/boost[python]
@@ -277,6 +275,7 @@ RUN mkdir -p ~/catkin_ros2/src &&\
 #     . ~/ros2_humble/install/local_setup.bash &&\
 #     colcon build --symlink-install
 
+#Unhide python3.11
 RUN mv /tmp/gentoo/usr/bin/python3.11_temp /tmp/gentoo/usr/bin/python3.11
 
 ENTRYPOINT ["/bin/bash"]
